@@ -127,14 +127,14 @@ $(function() {
     });
 
     const saveData = (body) => {
-        const url = "http://3.131.219.42:10001/v1/invite/signMeUp";
+        const url = "https://sling.biz/api/v1/invite/signMeUp";
         $.ajax({
             type: "POST",
             url,
             data: body, // serializes the form's elements.
             success: function(data)
             {
-                alert(data); // show response from the php script.
+                alert(data.msg); // show response from the php script.
             }
         });
     }
