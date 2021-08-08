@@ -134,7 +134,7 @@ p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 2px solid #f14836;
+  border: 2px solid #ff9800;
   padding: 0 30px;
   font-size: 16px;
   height: 55px;
@@ -148,10 +148,10 @@ p {
   -ms-transition: all 0.4s ease-out 0s;
   -o-transition: all 0.4s ease-out 0s;
   transition: all 0.4s ease-out 0s;
-  background-color: #f14836; }
+  background-color: #ff9800; }
   .main-btn:hover {
     background-color: rgba(241, 72, 54, 0.3);
-    color: #f14836;
+    color: #ff9800;
     border-color: #f14836; }
   .main-btn.main-btn-2 {
     background-color: #fff;
