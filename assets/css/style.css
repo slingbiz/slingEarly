@@ -753,7 +753,7 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  width: 47%;
+  width: 42%;
   height: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .header-hero-image {
@@ -762,7 +762,7 @@ p {
       margin: 0 auto;
       padding-top: 50px; } }
   @media (max-width: 767px) {
-	
+
     .header-hero-image {
       width: 100%;
       position: relative;
@@ -804,7 +804,7 @@ p {
     display: contents; }
 
 .header-hero-content .text {
-  max-width: 490px;
+  max-width: 520px;
   font-size: 16px;
   padding-top: 40px; }
 
@@ -2276,3 +2276,37 @@ p {
       color: #ff9800; }
     .blog-ratting .ratting-list ul li a span {
       float: right; }
+.feature-cls{
+    width: 100%;
+    font-size: 16px;
+    height: 300px;
+    font-weight: 500;
+    padding: 25px;
+    border-radius: 8px;
+    /*margin: 10px;*/
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .grid-container {
+    gap: 10px;
+  }
+}
+.feature-icon{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.feature-para{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
