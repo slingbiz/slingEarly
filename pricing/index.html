@@ -117,12 +117,12 @@
                                        style="background: #ff9800; padding: 10px 15px ; border-radius: 6px ; color: white;"
                                        href="https://studio.sling.biz">Demo</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a href="index.html#about">About </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="index.html#services">Product</a>
-                                </li>
+                                </li> -->
 
                                 <li class="nav-item">
                                     <a href="pricing.html">Pricing</a>
@@ -138,8 +138,10 @@
                                 <!--                                    <li class="nav-item">-->
                                 <!--                                        <a href="index.html/#blog">Blog</a>-->
                                 <!--                                    </li>-->
-                                <li class="nav-item">
-                                    <a href="https://sling.biz/#contact">Contact</a>
+                                <li class="nav-item active">
+                                    <a target="_blank" id="auth-link" style="background: #ff9800; padding: 10px 15px ; border-radius: 6px ; color: white;white-space: nowrap;
+                                   display: inline-block;
+                                   max-width: 100%;" href="https://studio.sling.biz/signup">Sign Up</a>
                                 </li>
                             </ul>
                         </div> <!-- navbar collapse -->
@@ -338,8 +340,7 @@
                         <p class="text" style="font-weight: 300;">Sling is a Less Code Frontend CMS Framework and CMS
                             which
                             can be used to create quick & responsive frontend websites by easily picking different
-                            flavours and connecting their Backend Apis.<br/> <br/>Sling comes with different flavours to
-                            support different types of UI & websites.
+                            flavours and connecting their Backend Apis.<br/> <br/>Sling is an Open Source alternative to Builder.io.
                         </p>
                     </div> <!-- footer about -->
                 </div>
@@ -467,6 +468,27 @@
 
 <!--====== Main js ======-->
 <script src="../assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        const token = getCookie("loginToken"); // Replace with the actual cookie name
+
+        const authLink = $("#auth-link");
+        if (token) {
+            // authLink.attr("href", "https://studio.sling.biz/app"); // Update the href to go to the app
+            authLink.text("Go to App"); // Change the text to "Go to App"
+        }
+    });
+
+    $(window).on('load', function () {
+        $('#preloader').delay(500).fadeOut(500);
+    });
+</script>
 
 </body>
 

@@ -788,7 +788,7 @@ p {
     padding-top: 150px; } }
 
 .header-hero-content .hero-title {
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
   font-weight: 400;
   color: #000; }
@@ -809,8 +809,9 @@ p {
 
 .header-hero-content .text {
   max-width: 520px;
+  text-align:center;
   font-size: 16px;
-  padding-top: 40px; }
+  padding-top: 15px; }
 
 .header-hero-content .header-singup {
   position: relative;
@@ -833,18 +834,20 @@ p {
   .tcenter{
   text-align: center;
   }
-      .header-hero-content .header-singup input {
-    height: 50px;
-    font-size: 20px;
-    border: 0;
-    border-radius: 50px;
-    padding: 0 30px;
-    background-color: #fff;
-    -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
-    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05); }
+    #top-email {
+      height: 50px;
+      font-size: 20px;
+      border: 0;
+      border: 1px solid #ebe8e3;
+      border-radius: 8px;
+      padding: 0 21px;
+      /* background-color: #ff9800; */
+      -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 2px 50px 0px rgba(0, 12, 1, 0.05);
+    }
     @media (max-width: 767px) {
-      .header-hero-content .header-singup input {
+      #top-email {
         height: 56px;margin-top:10px;
   margin-left:0 !important;
     width: 100% !important; } }
@@ -2351,4 +2354,69 @@ p {
     color: white;
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Command Section */
+.command-section {
+  background-color: white;
+  padding: 20px 0;
+}
+
+.command-box {
+  display: inline-flex;
+  align-items: center;
+  background-color: #424242;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.command-text {
+  margin-right: 10px;
+}
+
+.copy-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  color: #d3d0a4;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.get-started {
+  background-color: #ff9800;
+  color: white;
+}
+
+.try-live-demo {
+  background-color: white;
+  color: #ff9800;
+  border: 2px solid #efd3aa;
+}
+
+.get-started:hover {
+  background-color: #ff9800;
+}
+
+.try-live-demo:hover {
+  background-color: #f0f0f0;
 }
