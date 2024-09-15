@@ -1185,31 +1185,120 @@ export default GlobalPage;
       <script src="documentation/assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
       <script src="documentation/assets/js/docs.js"></script>
       <!-- JavaScript -->
-<script>
-    // Wait for the DOM to load
-    document.addEventListener('DOMContentLoaded', function () {
-       // Select all links with the 'scrollto' class
-       const scrollLinks = document.querySelectorAll('a.scrollto');
- 
-       // Add a click event listener to each link
-       scrollLinks.forEach(link => {
-          link.addEventListener('click', function (e) {
-             // Prevent default click behavior (jumping to section)
-             e.preventDefault();
- 
-             // Get the href attribute (section id)
-             const targetId = this.getAttribute('href');
- 
-             // Smooth scroll to the section
-             document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-             });
- 
-             // Append the target id (hash) to the URL
-             history.pushState(null, null, targetId);
-          });
-       });
-    });
- </script>
+      <script>
+        // Debounce function to delay the execution until the user stops typing
+        function debounce(func, wait) {
+           let timeout;
+           return function () {
+              const context = this, args = arguments;
+              clearTimeout(timeout);
+              timeout = setTimeout(() => func.apply(context, args), wait);
+           };
+        }
+     
+        // Wait for the DOM content to load before running the script
+        document.addEventListener('DOMContentLoaded', function () {
+           // Select all links with the 'scrollto' class
+           const scrollLinks = document.querySelectorAll('a.scrollto');
+     
+           // Add a click event listener to each link
+           scrollLinks.forEach(link => {
+              link.addEventListener('click', function (e) {
+                 // Prevent default click behavior (jumping to section)
+                 e.preventDefault();
+     
+                 // Get the href attribute (section id)
+                 const targetId = this.getAttribute('href');
+     
+                 // Smooth scroll to the section
+                 document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                 });
+     
+                 // Append the target id (hash) to the URL
+                 history.pushState(null, null, targetId);
+              });
+           });
+     
+           // Search function for highlighting
+           const searchFunction = () => {
+              const query = document.getElementById('searchInput').value.toLowerCase();
+              const sections = document.querySelectorAll('.docs-section');
+              const menuItems = document.querySelectorAll('.section-items li');
+     
+              // If search input is empty, reset all sections and menu items
+              if (!query.trim()) {
+                 sections.forEach(section => {
+                    section.style.backgroundColor = ''; // Reset background
+                    section.style.border = ''; // Reset border
+                 });
+     
+                 menuItems.forEach(item => {
+                    item.style.backgroundColor = ''; // Reset background
+                    item.style.fontWeight = 'normal'; // Reset font weight
+                 });
+                 return; // Exit the function early
+              }
+     
+              let firstMatch = null;
+     
+              // Loop through content sections
+              sections.forEach(section => {
+                 const text = section.textContent.toLowerCase();
+                 // Remove any previous highlights
+                 section.style.backgroundColor = '';
+                 section.style.border = ''; // Remove previous border if any
+                 if (text.includes(query)) {
+                    // Highlight the matching section with a background color and border
+                    section.style.backgroundColor = '#e0f7fa'; // Light blue background
+                    section.style.border = '2px solid #00796b'; // Add a teal border for emphasis
+     
+                    if (!firstMatch) {
+                       firstMatch = section; // Store the first match
+                    }
+                 }
+              });
+     
+              // Scroll to the first match if it exists
+              if (firstMatch) {
+                 firstMatch.scrollIntoView({
+                    behavior: 'smooth'
+                 });
+              }
+     
+              // Loop through the menu items (side navigation)
+              menuItems.forEach(item => {
+                 const itemText = item.textContent.toLowerCase();
+                 // Remove any previous highlights
+                 item.style.backgroundColor = ''; // Remove previous background
+                 item.style.fontWeight = 'normal'; // Reset font weight
+     
+                 if (itemText.includes(query)) {
+                    // Highlight the matching menu item with a background color and bold text
+                    item.style.backgroundColor = '#e0f7fa'; // Same light blue background as section
+                    item.style.fontWeight = 'bold'; // Bold text for the matched item
+                 }
+              });
+           };
+     
+           // Attach the search input functionality with debounce
+           const debouncedSearch = debounce(searchFunction, 300); // Wait 300ms after typing finishes
+     
+           document.getElementById('searchInput').addEventListener('keyup', function (event) {
+              // Prevent default action on pressing "Enter"
+              if (event.key === 'Enter') {
+                 event.preventDefault();
+              }
+              // Call the debounced search function
+              debouncedSearch();
+           });
+        });
+     </script>
+     
+     
+     
+     
+
+     
    </body>
 </html>
