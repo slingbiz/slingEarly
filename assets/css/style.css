@@ -2420,3 +2420,33 @@ p {
 .try-live-demo:hover {
   background-color: #f0f0f0;
 }
+
+.features-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+.single-feature {
+  background: #fff;
+  height: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.single-feature:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.feature-icon {
+  max-width: 250px;
+  height: 250px;
+}
+.single-feature h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.single-feature p {
+  font-size: 16px;
+  color: #6c757d;
+  margin-top: 10px;
+}
