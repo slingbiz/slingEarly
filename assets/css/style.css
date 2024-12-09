@@ -2438,6 +2438,8 @@ p {
 }
 .feature-icon {
   max-width: 250px;
+}
+.feature-icon-info {
   height: 250px;
 }
 .single-feature h5 {
