@@ -791,13 +791,19 @@ p {
   font-size: 50px;
   text-align: center;
   font-weight: 400;
-  color: #000; }
+  color: #000;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .header-hero-content .hero-title {
       font-size: 48px; } }
   @media (max-width: 767px) {
     .header-hero-content .hero-title {
-      font-size: 28px; } }
+      font-size: 28px;
+      max-width: 100%; } }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .header-hero-content .hero-title {
       font-size: 34px; } }
@@ -812,6 +818,17 @@ p {
   text-align:center;
   font-size: 16px;
   padding-top: 15px; }
+
+/* The two hero subhead paragraphs (npm command intro) use inline-styled
+   spans, not the .text class above, so they had no width constraint at
+   all and could run under the absolutely-positioned hero image on wide
+   viewports — same overflow this fixes on .hero-title. */
+.header-hero-content > .command-section:first-of-type p {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
 
 .header-hero-content .header-singup {
   position: relative;
