@@ -185,7 +185,7 @@
                            </li>
                            <li>
                               <code>Self Hosted</code>
-                              <span>Hosted on your servers. Host Studio and API on your own server and manage content on the fly, including AI-generated widgets, with a full review and audit trail before anything goes live.</span>
+                              <span>Host Studio and API on your own server. Create uses your Gemini key on that API. Open Studio at localhost:2021/create.</span>
                            </li>
                         </ul>
                         <p><strong>Head for your headless backend</strong>.Whether it's  a landing page or an e-commerce site or an event booking platform, easily bootstrap your pages by connecting backend headless APIs and attaching React widgets to your pages.</p>
@@ -251,12 +251,12 @@
                         <code class="json hljs" style="display: flex; flex-direction: column; padding: 20px;">
                            <div style="display: flex; flex-direction: column;">
                               <p style="color: #999;margin: 0"># with Yarn</p>
-                              <p style="color: white; margin: 0;">yarn create sling-app </p>
+                              <p style="color: white; margin: 0;">yarn create sling-app my-site</p>
                            </div>
                            <br/>
                            <div style="display: flex; flex-direction: column;">
                               <p style="color: #999;margin: 0"># with NPM</p>
-                              <p style="color: white; margin: 0;">npx create-sling-app </p>
+                              <p style="color: white; margin: 0;">npx create-sling-app my-site</p>
                            </div>
                         </code>
                      </div>
@@ -291,12 +291,11 @@
                      NEXT_PUBLIC_CLIENT_ID=your@email.id</br>
                      </code>
                      </br>
-                     <p> Once the installation is complete, Visit the below URL on your local to view your Sling Frontend
-                        App . 
+                     <p> Once the installation is complete, Create pages in Studio at
+                        <a href="http://localhost:2021/create">http://localhost:2021/create</a>
+                        (self-host) or <a href="https://studio.sling.biz/create">studio.sling.biz/create</a> (hosted).
+                        The storefront is <a href="http://localhost:4087/">http://localhost:4087</a>.
                      </p>
-                     <code class="json hljs" style="display: flex; padding: 20px;">
-                     <a href="http://localhost:4087/">http://localhost:4087</a>
-                     </code>
                      </br>
                      <p>You should see a functioning demo frontend. </p>
                      <p><b>Home Page </b></p>
