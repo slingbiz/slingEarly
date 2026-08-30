@@ -107,7 +107,7 @@
                   </li>
                   <li class="nav-item">
                      <a class="nav-link scrollto" href="#enterprise">
-                     <span class="theme-icon-holder me-2"><i class="fas fa-briefcase"></i></span>Enterprise
+                     <span class="theme-icon-holder me-2"><i class="fas fa-briefcase"></i></span>Hosted vs self-host
                      </a>
                   </li>
                   <li class="nav-item">
@@ -172,41 +172,36 @@
             <div class="container">
                <article class="docs-article" id="meet-sling">
                   <header class="docs-header">
-                     <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2024-04-15</span></h1>
+                     <h1 class="docs-heading">Introduction <span class="docs-time">Last updated: 2026-08-30</span></h1>
                      <section class="docs-intro">
                         <p>
-                           Sling CMS is an open-source, governed AI CMS. Generate React widgets with AI, or build your own — every AI generation runs in a sandboxed preview, is checked against a governance policy, and goes through review before it's published. Completely customizable Pages, Templates & Widgets written in NextJs.
-                           How to setup ?
+                           Sling CMS is an open-source CMS. Studio edits the site. The storefront is the live site. The API sits between them. Create can generate a page with AI. Nothing goes live until you publish.
                         </p>
                         <ul style="margin: -10px 20px 20px 20px;">
                            <li>
-                              <code>Cloud Studio</code>
-                              <span>Sign up on <a href="https://studio.sling.biz">Sling CMS Studio </a> to get your keys and update them in your Sling CMS Frontend. Use<code>create-sling-app </code> for quick start.</span>
+                              <code>Hosted Studio</code>
+                              <span>Sign up at <a href="https://studio.sling.biz">studio.sling.biz</a>. Create is capped at 20 pages a day. Use <code>npx create-sling-app</code> if you also want a local storefront.</span>
                            </li>
                            <li>
-                              <code>Self Hosted</code>
-                              <span>Host Studio and API on your own server. Create uses your Gemini key on that API. Open Studio at localhost:2021/create.</span>
+                              <code>Self-hosted</code>
+                              <span>The installer runs Studio, the API, and the storefront on your machine. Create uses your Gemini key and has no daily cap. Sign up at localhost:2021.</span>
                            </li>
                         </ul>
-                        <p><strong>Head for your headless backend</strong>.Whether it's  a landing page or an e-commerce site or an event booking platform, easily bootstrap your pages by connecting backend headless APIs and attaching React widgets to your pages.</p>
+                        <p>Connect your own APIs to widgets when you want a listing, a product page, or any other data-backed page.</p>
                      </section>
                      <br/>
                      <h2 class="section-heading">Features</h2>
-                     <h5>Frontend CMS:</h5>
+                     <h5>Studio</h5>
                      <p>
-                        Use the <span>Studio</span> to manage and customize your frontend on the go. 
-                        Manage page layouts and adjust device visibility for all pages from a single admin panel. 
-                        Create and pick page templates, connect your own backend APIs to Sling CMS, and get your frontend up and running instantly. 
-                        Add any number of pages and let your marketing team manage your frontend without making any code changes.
+                        Edit pages, routes, widgets, theme, members, and the gallery from one place.
+                        Create generates a page as named sections. You review, then publish.
                      </p>
-                     <h5 style="margin-top: 40px;">NextJs & Material UI</h5>
-                     <p>Built completely on NextJS and Material UI, Sling CMS abstracts out common functionalities and uses global routes and layout configurations from the Sling CMS Studio to create pages.</p>
-                     <h5 style="margin-top: 40px;">Widgets & Components</h5>
-                     <p>Create your own widgets or download from a comprehensive list of page templates and components in the Sling CMS Marketplace. Customize them as needed and use them in your app</p>
-                     <h5 style="margin-top: 40px;">Sitemaps, AMP Pages and More</h5>
-                     <p>Manage your sitemaps, link AMP pages and stories to your main pages. Customize Theme, setup Cron
-                        and Emailers from one place and setup all site analytics from the Sling CMS Studio.
-                     </p>
+                     <h5 style="margin-top: 40px;">Storefront</h5>
+                     <p>A Next.js site that reads layout from the API. What you publish in Studio is what people see.</p>
+                     <h5 style="margin-top: 40px;">Widgets</h5>
+                     <p>Pages are React widgets with props you can edit in Studio. Add your own widgets in the storefront repo. AI writes JSX. It does not replace widget props.</p>
+                     <h5 style="margin-top: 40px;">Theme and gallery</h5>
+                     <p>Theme lives at <code>/theme</code> in Studio. Gallery is the asset library. Image props pick from Gallery.</p>
                      <h5 style="margin-top: 40px;">What's next?</h5>
                      <p>
                         If you're already convinced to use Sling CMS, check the Installation guide.
@@ -232,12 +227,9 @@
                               Prerequisites
                            </h4>
                            <p>
-                              Make sure <a href="https://nodejs.org/en/"> Node.js</a> and <a
-                                 href="https://classic.yarnpkg.com/en/">yarn</a> are properly installed on your
-                              machine. It is also possible to use npm instead of yarn
-                              <br/>
-                              (see <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">install
-                              the Npm package</a>).
+                              You need <a href="https://nodejs.org/en/">Node.js</a> 18 or newer.
+                              Self-host also needs MongoDB. Local Mongo, Docker Desktop, or Atlas all work. The installer can start Mongo in Docker if the local URI is down.
+                              Create needs a <a href="https://aistudio.google.com/apikey">Gemini API key</a>. You can skip it and add it later.
                            </p>
                         </div>
                         <!--//content-->
@@ -246,96 +238,48 @@
                      <br/>
                      <p>👇 Let's get started!</p>
                      <br/>
-                     <h5>🚀 Step 1: Create a new project with Sling CMS</h5>
+                     <h5>Step 1: Create a project</h5>
                      <div class="docs-code-block">
                         <code class="json hljs" style="display: flex; flex-direction: column; padding: 20px;">
                            <div style="display: flex; flex-direction: column;">
-                              <p style="color: #999;margin: 0"># with Yarn</p>
-                              <p style="color: white; margin: 0;">yarn create sling-app my-site</p>
-                           </div>
-                           <br/>
-                           <div style="display: flex; flex-direction: column;">
-                              <p style="color: #999;margin: 0"># with NPM</p>
-                              <p style="color: white; margin: 0;">npx create-sling-app my-site</p>
+                              <p style="color: #999;margin: 0"># latest installer</p>
+                              <p style="color: white; margin: 0;">npx create-sling-app@latest my-site</p>
                            </div>
                         </code>
                      </div>
-                     <!--//docs-code-block-->
+                     <p>Pick <b>Hosted</b> or <b>Self-hosted</b>.</p>
+                     <p>Hosted clones the storefront and points it at <a href="https://studio.sling.biz">studio.sling.biz</a>.</p>
+                     <p>Self-hosted clones Studio, the API, and the storefront, then starts all three.</p>
                      <br/>
-                     <h5>Step 2: Set the license key and email</h5>
-                     <p>Once the download is complete, you will be prompted to enter the license key and email.
-                        Sling CMS community is free forever. This is required to manage frontend from the Sling CMS Studio.
-                     </p>
-                     <code class="json hljs" style="display: flex;; padding: 20px;">
-                     <span style="color:green;font-weight: bold;margin-right: 5px">?</span>
-                     <span style="color:white; margin-right: 7px">Your email address? </span>
-                     <span style="margin-right: 7px;font-size: 10px;margin-top:2px">></span> cto@awesomecompany.com
+                     <h5>Step 2: Self-host prompts</h5>
+                     <p>If you chose self-hosted, you will be asked for a MongoDB URI and a Gemini key.</p>
+                     <code class="json hljs" style="display: flex; flex-direction: column; padding: 20px;">
+                     <span>? Do you want a hosted solution or self-hosted dashboard? Self-hosted Dashboard</span>
+                     <span>? Enter the name of your project: my-site</span>
+                     <span>? Enter your MongoDB URI: mongodb://localhost:27017/sling</span>
+                     <span>? Enter your GEMINI_API_KEY. Skip to add it later.</span>
                      </code>
-                     <p style="padding-top:10px;">Next your unique Sling CMS license Key which can be easily generated once
-                        after signing up on the Studio.
-                     </p>
-                     <code class="json hljs" style="display: flex;; padding: 20px;">
-                     <span style="color:green;font-weight: bold;margin-right: 5px">?</span>
-                     <span style="color:white; margin-right: 7px">Your Sling CMS License Key? </span>
-                     <span style="margin-right: 7px;font-size: 10px;margin-top:2px">></span>
-                     195b2d33-b996-471b-90c6-d4cdde525
-                     </code>
+                     <p style="padding-top:10px;">Skipped the Gemini key? Add <code>GEMINI_API_KEY</code> to <code>sling-api/.env</code> before Create will generate.</p>
                      <br/>
-                     <p>If not prompted with Sling CMS Api Key and Email? You can set up the same in your environment
-                        files. 
-                     </p>
-                     <code class="json hljs" style="display: flex; padding: 20px;">
-                     <span style="color:green;font-weight: bold;margin-right: 5px">.env</span> </br>
-                     NEXT_PUBLIC_GET_INIT_PROPS=https://sling.biz/api/v1/frontend/getInitProps</br>
-                     NEXT_PUBLIC_CLIENT_KEY_SECRET=your-sling-secret-key</br>
-                     NEXT_PUBLIC_CLIENT_ID=your@email.id</br>
-                     </code>
-                     </br>
-                     <p> Once the installation is complete, Create pages in Studio at
-                        <a href="http://localhost:2021/create">http://localhost:2021/create</a>
-                        (self-host) or <a href="https://studio.sling.biz/create">studio.sling.biz/create</a> (hosted).
-                        The storefront is <a href="http://localhost:4087/">http://localhost:4087</a>.
-                     </p>
-                     </br>
-                     <p>You should see a functioning demo frontend. </p>
-                     <p><b>Home Page </b></p>
-                     <div>
-                        <img style="width:70%;box-shadow: 0 20px 20px rgb(0 0 0 / 10%)"
-                           src="./documentation/assets/images//homepage-sling.png"/>
-                     </div>
-                     </br>
-                     <p>For<b> Product Listing Page</b>, You can visit <code> <a
-                        href="http://localhost:4087/dubai/women/clothes/products">/dubai/women/clothes/products</a></code>
-                     </p>
-                     <!--                    <p><b>Home Page </b></p>-->
-                     <div>
-                        <img style="width:70%;box-shadow: 0 20px 20px rgb(0 0 0 / 10%)"
-                           src="./documentation/assets/images/sling-demo-fe.png"/>
-                     </div>
-                     <br/>
-                     <br/>
-                     <h5>Step 3: Manage Frontend with Sling CMS Studio</h5>
-                     <p> Login to Sling CMS <a href="https://studio.sling.biz">Studio</a> and manage your layout,
-                        css and customize your frontend site on the fly. 
-                     </p>
-                     </p>
-                     <p>
-                        For any queries, Please contact <a href="mailto:info@sling.biz">contact our support
-                        team.</a>
-                     </p>
+                     <h5>Step 3: Open the three URLs</h5>
+                     <p>When the installer finishes, it prints:</p>
+                     <ol>
+                        <li>Sign up at <a href="http://localhost:2021">http://localhost:2021</a></li>
+                        <li>API at <a href="http://localhost:10001">http://localhost:10001</a> — Studio and the storefront talk to this</li>
+                        <li>Preview the live site at <a href="http://localhost:4087">http://localhost:4087</a></li>
+                     </ol>
+                     <p>Create an account in Studio first. One company is picked automatically. A second company: paste that company’s key from Settings → Keys into <code>sling-fe/.env</code> and restart the storefront.</p>
+                     <p>Then generate a page at <a href="http://localhost:2021/create">localhost:2021/create</a> (self-host) or <a href="https://studio.sling.biz/create">studio.sling.biz/create</a> (hosted). Create never takes over <code>/</code>. Home stays your first page.</p>
+                     <p>Ctrl + C in the installer terminal stops all three.</p>
+                     <p>Questions: <a href="mailto:hello@sling.biz">hello@sling.biz</a>.</p>
                      <br/>
                      <br/>
                      <!--//content-->
                   </section>
                   <section class="docs-section" id="enterprise">
-                     <h2 class="section-heading">Enterprise</h2>
+                     <h2 class="section-heading">Hosted vs self-host</h2>
                      <p>
-                        Sling CMS Enterprise is a commercial offering from the Sling CMS core team built
-                        on top of the open-source product.
-                        <br/>
-                        It's goal is to give you all the tools you need to launch your Frontend Website
-                        and provide you with ready-to-use integrations
-                        that will reduce your project's development time and cost.
+                        Same product. The difference is who runs the API and where Create gets its model key.
                      </p>
                      <h5 class="mt-5">Sample Screenshots</h5>
                      <p>The screenshots below are taken from Sling CMS Studio.</p>
@@ -363,11 +307,11 @@
                      </div>
                      <!--//gallery-->
                      <br/>
-                     <h5>Differences between Open Source and Enterprise versions</h5>
+                     <h5>What changes</h5>
                      <ul>
-                        <li>Access to all the Flavors, Page Templates & Widgets</li>
-                        <li>Access to cloud and managed services</li>
-                        <li>Unlimited usage for other tools - Manage Analytics and 3rd party apps.</li>
+                        <li><b>Hosted</b> — Studio at studio.sling.biz. Create is 20 pages a day. You do not run Mongo or the API.</li>
+                        <li><b>Self-host</b> — Studio, API, and storefront run on your box. Create uses your Gemini key and has no daily cap.</li>
+                        <li>Widgets, pages, routes, theme, gallery, and members are the same in both.</li>
                      </ul>
                      <div class="table-responsive my-4">
                      </div>
@@ -416,8 +360,7 @@
                         <li><b>Ready to use Widgets and Components</b></li>
                         <ul>
                            <li style="list-style: none">
-                              Browse marketplace to buy ready to use widgets for your website or ecommerce
-                              storefront.
+                              Use the widgets that ship with the storefront, or add your own in the repo and register them.
                            </li>
                            <li style="list-style: none">
                               <div class="progress my-4">
@@ -456,15 +399,13 @@
                   <section class="docs-section" id="key-concepts">
                      <h2 class="section-heading">Key Concepts</h2>
                      <p>
-                        Sling CMS has 2 components -
+                        Sling CMS has 3 parts:
                      <ul>
-                        <li> A Frontend client in NextJS
-                        </li>
-                        <li> Sling CMS Studio</li>
+                        <li>Studio — edit and publish (localhost:2021 or studio.sling.biz)</li>
+                        <li>API — layout, auth, and Create (localhost:10001 when self-hosted)</li>
+                        <li>Storefront — the live Next.js site (localhost:4087)</li>
                      </ul>
-                     The Frontend client uses the Page Layout & UI Configuration from the Sling CMS Studio to render the UI
-                     with the relevant React Widgets.
-                     Sling CMS Studio can be used to pass dynamic configurable props from the Studio to the Frontend Client.
+                     The storefront reads page layout from the API. Studio writes that layout. Widget props you set in Studio are what the storefront renders.
                      </p>
                   </section>
                   <!--//section-->
@@ -710,17 +651,17 @@
                      <p>Once registered, the widget will be available in the widget registry and can be used across pages or templates based on the configuration provided.</p>
                   </section>
                   <section class="docs-section" id="media">
-                     <h2 class="section-heading">Media Images & Gallery</h2>
+                     <h2 class="section-heading">Gallery</h2>
                      <p>
-                        Manage your media assets here. Create static variables referring images and array of images and
-                        use them directly in the page routes and templates.
+                        Gallery is the asset library. Upload images there. Image props on a widget pick a file from Gallery. There is no separate Media Constants list.
                      </p>
                   </section>
                   <section class="docs-section" id="settings">
-                     <h2 class="section-heading">Settings & Theme</h2>
+                     <h2 class="section-heading">Settings and Theme</h2>
                      <p>
-                        Manage and Update your <b>Company information</b>, <b>Frontend Domain</b> and <b>Theme
-                        Settings</b> like Spacing, CSS and Color.
+                        Settings holds Company, Keys, Members, and Audit.
+                        Theme is its own rail item at <code>/theme</code> — colors, type, and spacing for the storefront.
+                        Header “View site” opens the live storefront.
                      </p>
                      <img class="logo-icon me-2"
                         style="width: 775px; border: 1px solid #f5f5f5"
@@ -979,23 +920,11 @@ export default GlobalPage;
                   </section>
                   <section class="docs-section" id="head-for-headless">
                      <h2 class="section-heading">Head for Headless</h2>
-                     Sling CMS FE offers the Frontend Client for connecting any of your backend APIs.
-                     You can use your own custom APIs to connect in built components or create your own using
-                     <a href="https://strapi.io/"><span>Strapi</span></a> and connect to Sling CMS Studio.
+                     The storefront can call any backend you already have. Put the fetch in the widget, or map a response onto widget props (response-derived).
                      <ul>
-                        <li>
-                           Any Api calls for your Pages can be added directly inside the HOC or the wrapping Sling CMS
-                           Component / Block or Widget.
-                        </li>
-                        <li>
-                           API calls can also be managed from the Sling CMS Studio in the API's section.
-                           The Api Section provides an option to add a list of API Endpoints which can be attached to
-                           any widget props.
-                        </li>
-                        <li>
-                           Any API calls added from the Sling CMS Studio are prefeched in the Sling CMS Studio and are returned
-                           in the <code>getInitialProps()</code> initial API call.
-                        </li>
+                        <li>Widget code can call your API directly.</li>
+                        <li>Response-derived props read a path on that response, for example <code>data.products</code>.</li>
+                        <li>There is no separate Headless APIs rail in Studio. Bind data on the widget.</li>
                      </ul>
                   </section>
                   <!--//section-->
@@ -1049,108 +978,39 @@ export default GlobalPage;
                   <header class="docs-header">
                      <h1 class="docs-heading">FAQs</h1>
                      <section class="docs-intro">
-                        <p>Section intro goes here. You can list all your FAQs using the format below.</p>
+                        <p>Common questions after a first install.</p>
                      </section>
-                     <!--//docs-intro-->
                   </header>
                   <section class="docs-section" id="item-9-1">
-                     <h2 class="section-heading">Section Item 9.1 <small>(FAQ Category One)</small></h2>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>What's sit amet quam eget lacinia?</h5>
-                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus. Donec quam
-                        felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                        pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                        imperdiet a, venenatis
-                        vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>How to ipsum dolor sit amet quam tortor?
-                     </h5>
-                     <p>
-                        Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-                        quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
-                        scelerisque ut, mollis
-                        sed, nonummy id, metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Can I bibendum sodales?</h5>
-                     <p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
-                        metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Where arcu sed urna gravida?</h5>
-                     <p>
-                        Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam
-                        mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
-                        Vivamus dapibus
-                        sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus
-                        est, imperdiet eu viverra viverra, ultricies nec urna.
-                     </p>
+                     <h2 class="section-heading">Install</h2>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Do I need a license key?</h5>
+                     <p>No. Sign up in Studio. Self-host does not ask for a license key.</p>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Why is localhost:10001 a page now?</h5>
+                     <p>That is the API. It is running. Open Studio or the storefront to use the product. Tools can still request JSON from the same URL.</p>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>The storefront was blank.</h5>
+                     <p>Home should show a first page after signup. Refresh localhost:4087. If you have two companies, paste the key for the one you want from Settings → Keys into sling-fe/.env and restart.</p>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Create does nothing.</h5>
+                     <p>Add GEMINI_API_KEY to sling-api/.env and restart the API. Hosted Create is 20 pages a day.</p>
                   </section>
-                  <!--//section-->
                   <section class="docs-section" id="item-9-2">
-                     <h2 class="section-heading">Section Item 9.2 <small>(FAQ Category Two)</small></h2>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>What's sit amet quam eget lacinia?</h5>
-                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus. Donec quam
-                        felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                        pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                        imperdiet a, venenatis
-                        vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>How to ipsum dolor sit amet quam tortor?
-                     </h5>
-                     <p>
-                        Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-                        quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
-                        scelerisque ut, mollis
-                        sed, nonummy id, metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Can I bibendum sodales?</h5>
-                     <p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
-                        metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Where arcu sed urna gravida?</h5>
-                     <p>
-                        Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam
-                        mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
-                        Vivamus dapibus
-                        sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus
-                        est, imperdiet eu viverra viverra, ultricies nec urna.
-                     </p>
+                     <h2 class="section-heading">Studio</h2>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Where did Marketplace, AMP, and Analytics go?</h5>
+                     <p>They are not in the product. Use Create, Pages, Routes, Widgets, Theme, Gallery, and Settings.</p>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Can Create replace the home page?</h5>
+                     <p>No. Generated pages get their own URL. Home stays <code>/</code>.</p>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Who can invite people?</h5>
+                     <p>Owner and Admin. Roles are Owner, Admin, Publisher, and Member.</p>
                   </section>
-                  <!--//section-->
                   <section class="docs-section" id="item-9-3">
-                     <h2 class="section-heading">Section Item 9.3 <small>(FAQ Category Three)</small></h2>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>How to dapibus sollicitudin justo vel
-                        fermentum?
-                     </h5>
-                     <p>
-                        Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-                        quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
-                        scelerisque ut, mollis
-                        sed, nonummy id, metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>How long bibendum sodales?</h5>
-                     <p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
-                        metus. Nullam accumsan lorem in dui.
-                     </p>
-                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Where dapibus sollicitudin?</h5>
-                     <p>
-                        Aenean et sodales nisi, vel efficitur sapien. Quisque molestie diam libero, et elementum diam
-                        mollis ac. In dignissim aliquam est eget ullamcorper. Sed id sodales tortor, eu finibus leo.
-                        Vivamus dapibus
-                        sollicitudin justo vel fermentum. Curabitur nec arcu sed urna gravida lobortis. Donec lectus
-                        est, imperdiet eu viverra viverra, ultricies nec urna.
-                     </p>
+                     <h2 class="section-heading">Help</h2>
+                     <h5 class="pt-3"><i class="fas fa-question-circle me-1"></i>Where do I ask for help?</h5>
+                     <p><a href="mailto:hello@sling.biz">hello@sling.biz</a> or <a href="https://github.com/slingbiz/sling/issues">GitHub issues</a>.</p>
                   </section>
-                  <!--//section-->
                </article>
                <!--//docs-article-->
                <footer class="footer">
                   <div class="container text-center py-5">
-                     <small class="copyright">Sling.biz &copy; 2022</small>
+                     <small class="copyright">Sling.biz &copy; 2026</small>
                      <ul class="social-list list-unstyled pt-4 mb-0">
                         <li class="list-inline-item">
                            <a href="https://github.com/slingbiz"><i class="fab fa-github fa-fw"></i></a>
