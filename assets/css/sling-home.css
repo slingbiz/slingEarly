@@ -85,14 +85,14 @@ body.sling-home .header-hero {
 
 body.sling-home .hero-split {
   display: grid;
-  grid-template-columns: minmax(360px, 6fr) minmax(280px, 4fr);
-  gap: 0;
-  align-items: stretch;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: center;
   width: 100%;
-  max-width: none;
+  max-width: 1120px;
   min-height: calc(100vh - 72px);
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 body.sling-home .header-hero-image {
@@ -100,28 +100,29 @@ body.sling-home .header-hero-image {
   position: relative !important;
   width: 100% !important;
   height: auto !important;
-  min-height: calc(100vh - 72px);
+  min-height: 0;
   top: auto;
   right: auto;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: var(--sling-cream);
-  padding: 32px 40px;
+  padding: 24px 0;
 }
 
 body.sling-home .header-hero-image img {
   width: 100%;
-  max-width: 720px;
+  max-width: none;
   max-height: calc(100vh - 140px);
   height: auto;
   object-fit: contain;
 }
 
 body.sling-home .header-hero-content {
-  max-width: 640px;
-  margin: 0 auto;
+  max-width: none;
+  width: 100%;
+  margin: 0;
   text-align: center;
-  padding: 56px 40px;
+  padding: 56px 8px 56px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
