@@ -105,7 +105,7 @@ body.sling-home .header-hero-image {
   right: auto;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  background: var(--sling-cream);
   padding: 32px 40px;
 }
 
