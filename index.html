@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/LineIcons.css">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/sling-home.css?v=hero-1">
+    <link rel="stylesheet" href="assets/css/sling-home.css?v=scroll-2">
 </head>
 
 <body class="sling-home">
@@ -74,33 +74,37 @@
                 </div>
                 <div class="install-line">
                     <span id="install-cmd">npx create-sling-app@latest my-site</span>
-                    <button type="button" onclick="copyCommand()" aria-label="Copy install command">Copy</button>
+                    <button type="button" class="copy-btn" id="copy-btn" onclick="copyCommand()">Copy</button>
                 </div>
                 <span class="install-hint">Self-host when you want Studio on your machine. Hosted Create is 20 pages a day.</span>
             </div>
         </div>
     </header>
 
-    <section class="home-section" id="govern">
-        <div class="container">
+    <section class="home-section screen" id="govern">
+        <div class="container screen-inner">
             <div class="text-center">
                 <h2>What “governed” means</h2>
                 <p class="lede">You stay in control of the slots, the preview, and what goes live.</p>
             </div>
             <div class="govern-grid">
                 <article class="govern-card">
+                    <img class="card-art" src="assets/images/home/govern-slots.png" alt="">
                     <h3>Slots you keep</h3>
                     <p>AI writes JSX into widget props. It does not replace the contract editors fill.</p>
                 </article>
                 <article class="govern-card">
+                    <img class="card-art" src="assets/images/home/govern-sandbox.png" alt="">
                     <h3>Sandboxed preview</h3>
                     <p>Preview runs without your Studio login. Generated code does not sit in your session.</p>
                 </article>
                 <article class="govern-card">
+                    <img class="card-art" src="assets/images/home/govern-publish.png" alt="">
                     <h3>Draft, then publish</h3>
                     <p>Roles decide who can go live. The live site does not change until you publish.</p>
                 </article>
                 <article class="govern-card">
+                    <img class="card-art" src="assets/images/home/govern-home.png" alt="">
                     <h3>Home stays yours</h3>
                     <p>Create always gets a unique URL. It cannot take <code>/</code>.</p>
                 </article>
@@ -108,24 +112,27 @@
         </div>
     </section>
 
-    <section class="home-section band" id="how">
-        <div class="container">
+    <section class="home-section screen band" id="how">
+        <div class="container screen-inner">
             <div class="text-center">
                 <h2>Create a page. Govern what ships.</h2>
                 <p class="lede">Describe it in Studio. Process saves a draft. You publish when it looks right.</p>
             </div>
             <div class="step-grid">
                 <article class="step-card">
+                    <img class="card-art" src="assets/images/home/create-describe.png" alt="">
                     <span class="step-num">1</span>
                     <h3>Describe a page</h3>
                     <p>Tell Studio what the page is. We break it into named widgets with props you still own.</p>
                 </article>
                 <article class="step-card">
+                    <img class="card-art" src="assets/images/home/create-template.png" alt="">
                     <span class="step-num">2</span>
                     <h3>Keep the template</h3>
                     <p>Change order, width, and props without throwing away what AI wrote.</p>
                 </article>
                 <article class="step-card">
+                    <img class="card-art" src="assets/images/home/create-url.png" alt="">
                     <span class="step-num">3</span>
                     <h3>Publish on a unique URL</h3>
                     <p>Every generated page gets its own route. Drafts stay drafts until you say so.</p>
@@ -189,7 +196,15 @@
     <script>
         function copyCommand() {
             const commandText = document.getElementById('install-cmd').innerText;
-            navigator.clipboard.writeText(commandText);
+            const btn = document.getElementById('copy-btn');
+            navigator.clipboard.writeText(commandText).then(function () {
+                btn.classList.add('is-copied');
+                btn.textContent = 'Copied';
+                window.setTimeout(function () {
+                    btn.classList.remove('is-copied');
+                    btn.textContent = 'Copy';
+                }, 1800);
+            });
         }
         function getCookie(name) {
             const value = '; ' + document.cookie;
