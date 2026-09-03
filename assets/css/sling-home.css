@@ -343,26 +343,15 @@ body.sling-home .contact-simple a {
 }
 
 body.sling-home .footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   text-decoration: none;
   margin-bottom: 12px;
 }
 
 body.sling-home .footer-brand img {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  object-position: 12% center;
-  mix-blend-mode: lighten;
-}
-
-body.sling-home .footer-brand span {
-  color: #fff !important;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: block;
+  width: 148px;
+  height: auto;
 }
 
 body.sling-home .footer-area {
