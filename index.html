@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/LineIcons.css">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/sling-home.css?v=footer-2">
+    <link rel="stylesheet" href="assets/css/sling-home.css?v=hero-img-3">
 </head>
 
 <body class="sling-home">
@@ -64,18 +64,23 @@
         </div>
 
         <div id="home" class="header-hero">
-            <div class="header-hero-content">
-                <h1 class="hero-title">A <span>Governed</span> AI CMS</h1>
-                <p class="hero-copy">Control what you publish with AI — small structured components that follow a protocol.</p>
-                <div class="cta-row">
-                    <a class="cta-primary" href="https://studio.sling.biz/signup">Create an account</a>
-                    <a class="cta-secondary" href="https://studio.sling.biz/create">Try Create</a>
+            <div class="hero-split">
+                <div class="header-hero-content">
+                    <h1 class="hero-title">A <span>Governed</span> AI CMS</h1>
+                    <p class="hero-copy">Control what you publish with AI — small structured components that follow a protocol.</p>
+                    <div class="cta-row">
+                        <a class="cta-primary" href="https://studio.sling.biz/signup">Create an account</a>
+                        <a class="cta-secondary" href="https://studio.sling.biz/create">Try Create</a>
+                    </div>
+                    <div class="install-line">
+                        <span id="install-cmd">npx create-sling-app@latest my-site</span>
+                        <button type="button" class="copy-btn" id="copy-btn" onclick="copyCommand()">Copy</button>
+                    </div>
+                    <span class="install-hint">Self-host when you want Studio on your machine. Hosted Create is 20 pages a day.</span>
                 </div>
-                <div class="install-line">
-                    <span id="install-cmd">npx create-sling-app@latest my-site</span>
-                    <button type="button" class="copy-btn" id="copy-btn" onclick="copyCommand()">Copy</button>
+                <div class="header-hero-image">
+                    <img src="assets/images/hero-image.png" alt="Drag-and-drop widgets with a live page preview">
                 </div>
-                <span class="install-hint">Self-host when you want Studio on your machine. Hosted Create is 20 pages a day.</span>
             </div>
         </div>
     </header>
