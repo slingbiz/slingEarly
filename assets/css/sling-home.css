@@ -85,7 +85,7 @@ body.sling-home .header-hero {
 
 body.sling-home .hero-split {
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: minmax(360px, 6fr) minmax(280px, 4fr);
   gap: 0;
   align-items: stretch;
   width: 100%;
@@ -118,7 +118,7 @@ body.sling-home .header-hero-image img {
 }
 
 body.sling-home .header-hero-content {
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
   padding: 56px 40px;
