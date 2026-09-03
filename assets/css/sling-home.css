@@ -36,7 +36,9 @@ body.sling-home .preloader {
 }
 
 body.sling-home .navbar-area {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 40;
   background: var(--sling-cream);
   border-bottom: 1px solid var(--sling-line);
   box-shadow: none;
@@ -75,8 +77,11 @@ body.sling-home .navbar-nav .nav-cta a:hover {
 body.sling-home .header-hero {
   background: var(--sling-cream) !important;
   height: auto !important;
-  min-height: 0;
-  padding: 48px 0 56px;
+  min-height: calc(100vh - 72px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0 72px;
 }
 
 body.sling-home .header-hero-image {
@@ -161,23 +166,74 @@ body.sling-home .cta-secondary:hover {
 }
 
 body.sling-home .install-line {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: var(--sling-ink);
   color: #fff;
   font-size: 13px;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-body.sling-home .install-line button {
-  background: transparent;
+body.sling-home .copy-btn {
+  position: relative;
+  background: var(--sling-orange);
   border: 0;
   color: #fff;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Open Sans", Helvetica Neue, Arial, sans-serif;
+  padding: 8px 16px;
+  border-radius: 8px;
+  min-width: 88px;
+  overflow: hidden;
+}
+
+body.sling-home .copy-btn:hover {
+  background: var(--sling-orange-hover);
+}
+
+body.sling-home .copy-btn.is-copied {
+  background: #2e7d32;
+  animation: copyPop 0.45s ease;
+}
+
+body.sling-home .copy-btn.is-copied::before,
+body.sling-home .copy-btn.is-copied::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffe082;
+  animation: copySpark 0.7s ease-out forwards;
+}
+
+body.sling-home .copy-btn.is-copied::before {
+  left: 12px;
+  top: 6px;
+}
+
+body.sling-home .copy-btn.is-copied::after {
+  right: 12px;
+  bottom: 6px;
+  animation-delay: 0.08s;
+}
+
+@keyframes copyPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes copySpark {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.4); }
+  100% { opacity: 0; transform: translate(10px, -14px) scale(1.4); }
 }
 
 body.sling-home .install-hint {
@@ -191,8 +247,19 @@ body.sling-home .home-section {
   padding: 64px 0;
 }
 
+body.sling-home .home-section.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 72px;
+}
+
+body.sling-home .screen-inner {
+  width: 100%;
+}
+
 body.sling-home .home-section h2 {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--sling-ink);
   margin: 0 0 8px;
@@ -208,19 +275,33 @@ body.sling-home .home-section .lede {
 body.sling-home .govern-grid,
 body.sling-home .step-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+body.sling-home .step-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.sling-home .govern-card,
 body.sling-home .step-card {
   background: #fff;
   border: 1px solid var(--sling-line);
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
   box-shadow: none;
   min-height: 0;
   height: auto;
+  text-align: left;
+}
+
+body.sling-home .card-art {
+  width: 100%;
+  max-width: 220px;
+  height: 160px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
 }
 
 body.sling-home .govern-card h3,
@@ -285,8 +366,20 @@ body.sling-home .footer-copyright {
   padding-top: 16px;
 }
 
+@media (max-width: 991px) {
+  body.sling-home .govern-grid,
+  body.sling-home .step-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   body.sling-home .hero-title {
     font-size: 28px;
+  }
+
+  body.sling-home .header-hero,
+  body.sling-home .home-section.screen {
+    min-height: 0;
   }
 }
