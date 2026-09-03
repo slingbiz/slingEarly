@@ -113,11 +113,8 @@ body.sling-home .hero-sub {
   line-height: 1.6;
   color: var(--sling-muted);
   font-weight: 400;
-  margin: 0 0 12px;
-}
-
-body.sling-home .hero-sub {
-  margin-bottom: 28px;
+  margin: 0 auto 28px;
+  max-width: 36em;
 }
 
 body.sling-home .cta-row {
@@ -343,6 +340,29 @@ body.sling-home .contact-simple a {
 body.sling-home .contact-simple a {
   color: var(--sling-orange);
   font-weight: 600;
+}
+
+body.sling-home .footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+body.sling-home .footer-brand img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: 12% center;
+  mix-blend-mode: lighten;
+}
+
+body.sling-home .footer-brand span {
+  color: #fff !important;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 body.sling-home .footer-area {
