@@ -2,606 +2,208 @@
 <html class="no-js" lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SKGN07R7F1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
-
         gtag('config', 'G-SKGN07R7F1');
     </script>
 
     <meta charset="utf-8">
-
-    <!--====== Title ======-->
-    <title>Sling CMS - The Open Source, Governed AI CMS</title>
-    <meta property="og:title" content="Sling CMS - The Open Source, Governed AI CMS" />
+    <title>Sling CMS — The open source, governed AI CMS</title>
+    <meta property="og:title" content="Sling CMS — The open source, governed AI CMS" />
     <meta property="og:url" content="https://sling.biz" />
     <meta property="og:description"
-        content="Sling CMS is an open-source, governed AI CMS. Describe a page, get widgets you govern, a template, and a unique URL. Publish when you say so." />
+        content="AI writes the page. You still own publish. Slots stay yours, preview is sandboxed, and nothing goes live until you say so." />
     <meta property="og:image" content="/assets/images/sling-fe-3d.jpg" />
-
-    <meta name="description" content="Sling CMS is an open-source, governed AI CMS. Describe a page, get widgets you govern, a template, and a unique URL. Publish when you say so.">
+    <meta name="description"
+        content="Sling CMS is an open-source, governed AI CMS. AI writes into slots you keep. Preview is sandboxed. You publish.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--====== Favicon Icon ======-->
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
-    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
+    <meta name="theme-color" content="#fff8f0">
 
-    <!--====== Font Awesome CSS ======-->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-    <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
-
-    <!--====== Animate CSS ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
-
-    <!--====== Bootstrap CSS ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
     <link rel="stylesheet" href="assets/css/default.css">
-
-    <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <link rel="stylesheet" href="assets/css/sling-home.css">
 </head>
 
-<body>
- 
-
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
+<body class="sling-home">
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg" style="flex-wrap:nowrap;">
+                    <a class="navbar-brand" href="/">
+                        <img src="assets/images/sling-fe.png" alt="Sling CMS">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <ul id="nav" class="navbar-nav ml-auto">
+                            <li class="nav-item"><a href="https://studio.sling.biz">Studio</a></li>
+                            <li class="nav-item"><a href="/documentation">Docs</a></li>
+                            <li class="nav-item"><a href="/pricing">Pricing</a></li>
+                            <li class="nav-item nav-cta">
+                                <a id="auth-link" href="https://studio.sling.biz/signup">Create an account</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
-    </div>
 
-    <!--====== PRELOADER PART ENDS ======-->
-
-    <!--====== HEADER PART START ======-->
-
-    <header class="header-area">
-        <div class="navbar-area headroom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg " style="flex-wrap:nowrap;">
-                            <a class="navbar-brand" href="/">
-                                <img src="assets/images/sling-fe.png" alt="Logo" width="30%">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav m-auto">
-                                    <li class="nav-item">
-                                        <a href="#home">Home</a>
-                                    </li>
-                                    <li class="nav-item active">
-                                        <a target="_blank"
-                                            style="background: #ff9800; padding: 10px 15px ; border-radius: 6px ; color: white;"
-                                            href="https://demo.sling.biz">Demo</a>
-                                    </li>
-
-                                  
-
-                                    <li class="nav-item">
-                                        <a href="/pricing">Pricing</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a target="_blank" href="https://sling.biz/documentation">Documentation
-                                            <!-- <sup style="color:#ff9800">New</sup></a> -->
-                                    </li>
-                                    <li class="nav-item">
-                                        <a target="_blank" href="https://github.com/slingbiz/sling-blog-fe">Examples</a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="#contact">Contact</a>
-                                    </li>
-                                    <li class="nav-item active">
-                                        <a target="_blank" id="auth-link" style="background: #ff9800; padding: 10px 15px ; border-radius: 6px ; color: white;white-space: nowrap;
-                                       display: inline-block;
-                                       max-width: 100%;" href="https://studio.sling.biz/signup">Sign Up</a>
-                                    </li>
-
-                                </ul>
-                            </div> <!-- navbar collapse -->
-
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- navbar area -->
-
-        <div id="home" class="header-hero bg_cover d-lg-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="header-hero-content">
-                       
-                            <section class="command-section">
-                                <div class="container text-center">
-                                    <h1 class="hero-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
-                                       Sling CMS. The open source, <b><span>governed AI CMS.</span></b>
-                                    </h1>
-
-                                    <p data-wow-duration="1s" data-wow-delay="0.5s" style="margin-top:2em"><span
-                                            style="font-size: 18px;font-weight: bold" class="tcenter">Describe a page. Get widgets you govern, a template, and a unique URL.</span>
-                                    </p>
-                                    <p  data-wow-duration="1s" data-wow-delay="0.5s" style="margin-bottom: 5px;"><span
-                                            style="font-size: 18px;font-weight: 400" class="tcenter">AI writes the JSX. You keep the props, the layout, and the live site. Nothing publishes until you say so.</span>
-                                    </p>
-                                </div>
-                            </section>
-
-                            <!-- Command Section Start -->
-                            <section class="command-section">
-                                <div class="container text-center">
-                                    <div class="command-box">
-                                        <span class="command-text">npx create-sling-app my-site</span>
-                                        <button class="copy-button" onclick="copyCommand()">
-                                            <i class="fas fa-copy"></i>
-                                        </button>
-                                    </div>
-                                    <div class="cta-buttons">
-                                        <button class="cta-button get-started"
-                                            onclick="openInNewTab('https://studio.sling.biz/signup')">Get
-                                            Started</button>
-                                        <button class="cta-button try-live-demo"
-                                            onclick="openInNewTab('https://studio.sling.biz/create')">Try Live Demo</button>
-
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- Command Section End -->
-                            <section class="command-section">
-                                <div class="container text-center">
-                                    <input style="width: 70%; margin-top:5em;" type="text" id="top-email"
-                                    placeholder="username@yourdomain.com">
-                                <button class="main-btn"
-                                    style="text-transform: none; background: #ff9800; text-transform:none ;padding: 0px 15px ; border-radius: 6px ; color: white;"
-                                    id="top-sign-dp">Request Demo
-                                </button>
-                            </div>
-                            </section>
-                        </div> <!-- header hero content -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-            <div class="header-hero-image d-flex align-items-center wow fadeInRightBig" data-wow-duration="1s"
-                data-wow-delay="1.1s">
-                <div class="image">
-                    <img src="assets/images/hero-image.png" alt="Hero Image">
+        <div id="home" class="header-hero">
+            <div class="header-hero-content">
+                <h1 class="hero-title">A <span>governed</span> CMS. AI writes the page. You still own publish.</h1>
+                <p class="hero-copy">Most AI site tools dump code and hope. Sling keeps a real CMS.</p>
+                <p class="hero-sub">AI fills slots you can still edit. Preview is sandboxed. Drafts stay drafts until you publish. Create cannot take the homepage.</p>
+                <div class="cta-row">
+                    <a class="cta-primary" href="https://studio.sling.biz/signup">Create an account</a>
+                    <a class="cta-secondary" href="https://studio.sling.biz/create">Try Create</a>
                 </div>
-            </div> <!-- header hero image -->
-        </div> <!-- header hero -->
+                <div class="install-line">
+                    <span id="install-cmd">npx create-sling-app@latest my-site</span>
+                    <button type="button" onclick="copyCommand()" aria-label="Copy install command">Copy</button>
+                </div>
+                <span class="install-hint">Self-host when you want Studio on your machine. Hosted Create is 20 pages a day.</span>
+            </div>
+        </div>
     </header>
 
-    <!--====== HEADER PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-    <div id="features" class="features-section pt-120 pb-120">
+    <section class="home-section" id="govern">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center pb-50">
-                        <h3 class="title">Create a <span style="color: #ff9800;">page</span>. Govern what ships.</h3>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h2>What “governed” means</h2>
+                <p class="lede">You stay in control of the slots, the preview, and what goes live.</p>
             </div>
-            <div class="row justify-content-center">
-                <!-- Feature 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-feature text-center mb-30">
-                        <img src="assets/images/feature1.png" alt="Describe a page" class="feature-icon feature-icon-info mb-4" />
-                        <h5>Describe a page</h5>
-                        <p>Tell Studio what the page is. We break it into widgets you can name, give props, and publish on their own.</p>
-                    </div>
-                </div>
-                <!-- Feature 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-feature text-center mb-30">
-                        <img src="assets/images/feature2.png" alt="Keep the template" class="feature-icon feature-icon-info mb-4" />
-                        <h5>Keep the template</h5>
-                        <p>The layout stays in Sling CMS. Change order, width, and props without replacing the widgets AI wrote.</p>
-                    </div>
-                </div>
-                <!-- Feature 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-feature text-center mb-30">
-                        <img src="assets/images/feature3.png" alt="Publish on a unique URL" class="feature-icon feature-icon-info mb-4" />
-                        <h5>Publish on a unique URL</h5>
-                        <p>Every page gets its own route. Drafts stay drafts until you publish. The live site does not change until then.</p>
-                    </div>
-                </div>
+            <div class="govern-grid">
+                <article class="govern-card">
+                    <h3>Slots you keep</h3>
+                    <p>AI writes JSX into widget props. It does not replace the contract editors fill.</p>
+                </article>
+                <article class="govern-card">
+                    <h3>Sandboxed preview</h3>
+                    <p>Preview runs without your Studio login. Generated code does not sit in your session.</p>
+                </article>
+                <article class="govern-card">
+                    <h3>Draft, then publish</h3>
+                    <p>Roles decide who can go live. The live site does not change until you publish.</p>
+                </article>
+                <article class="govern-card">
+                    <h3>Home stays yours</h3>
+                    <p>Create always gets a unique URL. It cannot take <code>/</code>.</p>
+                </article>
             </div>
         </div>
-    </div>
-     
-    <section id="about" class="about-area pt-115">
+    </section>
+
+    <section class="home-section band" id="how">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="about-title text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <h6 class="welcome">Features & Use Cases</h6>
-                        <h3 class="title"><span>Beautiful & Responsive Customizable Frontend.</span>
+            <div class="text-center">
+                <h2>Create a page. Govern what ships.</h2>
+                <p class="lede">Describe it in Studio. Process saves a draft. You publish when it looks right.</p>
+            </div>
+            <div class="step-grid">
+                <article class="step-card">
+                    <span class="step-num">1</span>
+                    <h3>Describe a page</h3>
+                    <p>Tell Studio what the page is. We break it into named widgets with props you still own.</p>
+                </article>
+                <article class="step-card">
+                    <span class="step-num">2</span>
+                    <h3>Keep the template</h3>
+                    <p>Change order, width, and props without throwing away what AI wrote.</p>
+                </article>
+                <article class="step-card">
+                    <span class="step-num">3</span>
+                    <h3>Publish on a unique URL</h3>
+                    <p>Every generated page gets its own route. Drafts stay drafts until you say so.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-                        </h3>
-                        <p style="font-size: 15px; font-weight:300; margin-top: 15px;margin-bottom: 20px;">Sling CMS is an
-                            open-source, governed AI CMS. Describe a page in Studio. We break it into widgets you
-                            govern, give it a template and a unique URL, and nothing goes live until you publish.</p>
-                        <div class="grid-container">
-                            <div class="feature-cls grid-left" style="background: #5cb377 !important; color: beige">
-                                <div
-                                    style="display: flex; flex-direction: column;align-items: center;justify-content: center">
-                                    <i class="lni-website feature-icon"></i>
-                                    <p class="feature-para"> Manage your Static Pages.</p>
-                                </div>
-                            </div>
-                            <div class="feature-cls grid-right" style="background: #5b99ea !important;color:beige">
-                                <div
-                                    style="display: flex; flex-direction: column;align-items: center;justify-content: center">
+    <section class="home-section" id="contact">
+        <div class="container text-center contact-simple">
+            <h2>Get in touch</h2>
+            <p class="lede">Questions, or stuck on Create? Email us.</p>
+            <p><a href="mailto:hello@sling.biz">hello@sling.biz</a></p>
+        </div>
+    </section>
 
-                                    <i class="lni-briefcase feature-icon"></i>
-                                    <p class="feature-para"> Modify Banners, In-Page Filters and Recommendations on your
-                                        Product
-                                        Listing & Detail Pages
-                                        on the Fly without deploying any code.</p>
-                                </div>
-                            </div>
-                            <div class="feature-cls grid-left" style="background: #EEBF41 !important; color: beige">
-                                <div
-                                    style="display: flex; flex-direction: column;align-items: center;justify-content: center">
-                                    <i class="lni-windows feature-icon"></i>
-                                    <p class="feature-para">
-                                        Ready to use Widgets and Components
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="feature-cls grid-right" style="background: #d26d69 !important;color: beige">
-                                <div
-                                    style="display: flex; flex-direction: column;align-items: center;justify-content: center">
-
-                                    <i class="lni-shopping-basket feature-icon"></i>
-                                    <p class="feature-para">
-                                        Quick launch your WebSite or Ecommerce Store.
-                                    </p>
-                                </div>
-                            </div>
+    <footer id="footer" class="footer-area">
+        <div class="container">
+            <div class="footer-widget pt-40 pb-40">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-12">
+                        <div class="footer-about pt-20">
+                            <a href="https://sling.biz/">
+                                <img src="assets/images/sling-fe.png" alt="Sling CMS" width="120">
+                            </a>
+                            <p class="text">Open source, governed AI CMS. AI writes the page. You still own publish.</p>
                         </div>
                     </div>
-                </div> <!-- row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="about-image mt-60 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <img src="assets/images/about.png" alt="about">
-                        </div> <!-- about image -->
-                    </div>
-                </div> <!-- row -->
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="about-content pt-45">
-                            <p style="font-size: 18px; text-align: center" class="text wow fadeInUp"
-                                data-wow-duration="1s" data-wow-delay="0.4s">Pages, templates, and widgets you still own.
-                                Written in Next.js.</p>
-                            <p style="font-size: 18px; text-align: center" class="text wow fadeInUp"
-                                data-wow-duration="1s" data-wow-delay="0.4s">Open source and self-hostable.</p>
-
-                            <div class="about-counter pt-60">
-                                <div class="row" style="text-align: center;">
-                                    <div class="col-sm-6">
-                                        <div class="single-counter counter-color-1 mt-30 d-flex wow fadeInUp"
-                                            data-wow-duration="1s" data-wow-delay="0.3s">
-                                            <div class="counter-shape">
-                                                <span class="shape-1"></span>
-                                                <span class="shape-2"></span>
-                                            </div>
-                                            <div class="counter-content media-body">
-                                                <span class="counter-count"><span class="counter">150</span></span><span
-                                                    style="padding-bottom: 15px;font-size:25px;">+</span>
-                                                <p class="text">React Widgets</p>
-                                            </div>
-                                        </div> <!-- single counter -->
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="single-counter counter-color-3 mt-30 d-flex wow fadeInUp"
-                                            data-wow-duration="1s" data-wow-delay="0.9s">
-                                            <div class="counter-shape">
-                                                <span class="shape-1"></span>
-                                                <span class="shape-2"></span>
-                                            </div>
-                                            <div class="counter-content media-body">
-                                                <span class="counter-count"><span class="counter">30</span></span><span
-                                                    style="padding-bottom: 15px;font-size:25px;">+</span>
-                                                <p class="text">Page Templates</p>
-                                            </div>
-                                        </div> <!-- single counter -->
-                                    </div>
-                                </div> <!-- row -->
-                            </div> <!-- about counter -->
-                        </div> <!-- about content -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-    </section>
-
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== OUR SERVICE PART START ======-->
-
-    <section id="services" class="our-services-area pt-115 mb-5">
-        <div class="container">
-            <div class="header-hero-content text-center">
-                <h1 class="hero-title wow fadeInUp" style="font-size:40px" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <b>Create a page</b> in Studio
-                </h1>
-                <p style="font-size: 20px;"></p></br>
-                <a href="https://studio.sling.biz/create" rel="nofollow" class="main-btn">Try Create</a>
-            </div> <!-- header hero content -->
-        </div>
-    </section>
-
-
-   
-    <!--====== CONTACT PART START ======-->
-
-    <section id="contact" class="contact-area pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center" style="display: flex;justify-content: center">
-                <div class="col-lg-4">
-                    <div class="section-title text-center pb-20 wow fadeInUp" data-wow-duration="1s"
-                        data-wow-delay="0.3s">
-                        <h6 class="sub-title">Our Contact</h6>
-                        <h4 class="title">Get In <span>Touch.</span></h4>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="contact-info pt-30" style="display: flex;justify-content: center">
-                <div class="row" style="width:500px;display:flex;justify-content:space-around;">
-               
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-contact-info contact-color-2 mt-30 d-flex  wow fadeInUp"
-                            data-wow-duration="1s" data-wow-delay="0.6s">
-                            <div class="contact-info-icon">
-                                <i class="lni-envelope"></i>
-                            </div>
-                            <div class="contact-info-content media-body" style="display:flex;align-items:center;">
-                                <p class="text" style="font-size:25px;">hello@sling.biz</p>
-                            </div>
-                        </div> <!-- single contact info -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- contact info -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact-wrapper-form pt-115  wow fadeInUpBig" data-wow-duration="1s"
-                        data-wow-delay="0.5s">
-                        <h4 class="contact-title pb-10"><i class="lni-envelope"></i> Leave <span>A Message.</span></h4>
-
-                        <form id="contact-form" action="#" method="post"
-                            style="border: 1px solid #f5efef; padding: 0 40px 40px;">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form mt-45">
-                                        <label>Enter Your Name</label>
-                                        <input type="text" name="name" placeholder="Full Name">
-                                    </div> <!-- contact-form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-form mt-45">
-                                        <label>Enter Your Email</label>
-                                        <input type="email" name="email" placeholder="Email">
-                                    </div> <!-- contact-form -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="contact-form mt-45">
-                                        <label>Your Message</label>
-                                        <textarea name="message" placeholder="Enter your message..."></textarea>
-                                    </div> <!-- contact-form -->
-                                </div>
-                                <p class="form-message"></p>
-                                <div class="col-md-12">
-                                    <div class="contact-form mt-45">
-                                        <button type="submit" class="main-btn">Send Now</button>
-                                    </div> <!-- contact-form -->
-                                </div>
-                            </div> <!-- row -->
-                        </form>
-                    </div> <!-- contact wrapper form -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== CONTACT PART ENDS ======-->
-
-    <!--====== FOOTER PART START ======-->
-    <footer id="footer" class="footer-area bg_cover">
-        <!--<footer id="footer" class="footer-area bg_cover" style="background-image: url(assets/images/footer-bg.jpg)"> -->
-        <div class="container">
-            <div class="footer-widget pt-30 pb-70">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 order-sm-1 order-lg-1">
-                        <div class="footer-about pt-40">
-                            <a href="https://sling.biz/">
-                                <img style="margin-left:-25px" src="assets/images/sling-fe.png" alt="Logo"
-                                    width="100%%">
-                            </a>
-                            <p class="text" style="font-weight: 300;">Sling CMS is an open-source, governed AI CMS.
-                                Describe a page. Get widgets you govern, a template, and a unique URL.
-                                Nothing publishes until you say so.<br /> <br />Open source and self-hostable.
-                            </p>
-                        </div> <!-- footer about -->
-                    </div>
-                    <div style="justify-content: end; margin-top: 35px ;display:flex"
-                        class="col-lg-3 col-sm-6 order-sm-3 order-lg-2">
-                        <div class="footer-link pt-40">
-                            <div class="footer-title">
-                                <h5 class="title">Services</h5>
-                            </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-link pt-20">
+                            <h5 class="title">Product</h5>
                             <ul>
-                                <li><a href="https://sling.biz/#contact">Open Source</a></li>
-                                <li><a href="/pricing/">Pricing</a></li>
-                                <li>Web & App Development</li>
+                                <li><a href="https://studio.sling.biz">Studio</a></li>
+                                <li><a href="https://studio.sling.biz/create">Create</a></li>
+                                <li><a href="/pricing">Pricing</a></li>
+                                <li><a href="/documentation">Docs</a></li>
                             </ul>
-                        </div> <!-- footer link -->
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 order-sm-4 order-lg-3"
-                        style="justify-content: end; margin-top: 35px ;display:flex">
-                        <div class="footer-link pt-40">
-                            <div class="footer-title">
-                                <h5 class="title">About Us</h5>
-                            </div>
-                            <ul>
-                                <li><a href="https://sling.biz/">Overview</a></li>
-                                <li><a href="https://sling.biz/">Why us</a></li>
-                                <li> <a href="/privacy">Privacy </a> </li>
-                                <li><a href="https://sling.biz/">Team</a></li>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="footer-contact pt-20">
+                            <h5 class="title">Contact</h5>
+                            <p class="text"><a href="mailto:hello@sling.biz">hello@sling.biz</a></p>
+                            <ul class="social mt-20">
+                                <li><a href="https://www.instagram.com/sling.biz/"><i class="lni-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/sling-biz/"><i class="lni-linkedin"></i></a></li>
                             </ul>
-                        </div> <!-- footer link -->
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 order-sm-2 order-lg-4"
-                        style="justify-content: end; margin-top: 35px ;display:flex">
-                        <div class="footer-contact pt-40">
-                            <div class="footer-title">
-                                <h5 class="title">Contact Info</h5>
-                            </div>
-                            <div class="contact pt-10">
-                                <!--                                <p class="text">21 King Street, Melbourne </br>-->
-                                <!--                                    Victoria, 1202 Australia.</p>-->
-                                <p class="text">hello@sling.biz</p>
-                                <!--                                <p class="text">+99 000 555 66 22</p>-->
-
-                                <ul class="social mt-40">
-                                    <!-- <li><a href="#"><i class="lni-facebook"></i></a></li> -->
-                                    <!-- <li><a href="#"><i class="lni-twitter"></i></a></li> -->
-                                    <li><a href="https://www.instagram.com/sling.biz/"><i class="lni-instagram"></i></a>
-                                    </li>
-                                    <li><a href="https://www.linkedin.com/company/sling-biz/"><i
-                                                class="lni-linkedin"></i></a></li>
-                                </ul>
-                            </div> <!-- contact -->
-                        </div> <!-- footer contact -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- footer widget -->
-            <div class="footer-copyright text-center">
-                <p class="text">© 2024 Brewed Passionately in <a href="https://sling.biz">Dubai</a>. All Rights
-                    Reserved.
-                </p>
+                </div>
             </div>
-        </div> <!-- container -->
+            <div class="footer-copyright text-center">
+                <p class="text">© 2026 Sling. Brewed in Dubai. <a href="/privacy">Privacy</a></p>
+            </div>
+        </div>
     </footer>
- 
 
-    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
-
- 
-
-
-    <!--====== Jquery js ======-->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-
-    <!--====== Bootstrap js ======-->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-
-    <!--====== Plugins js ======-->
-    <script src="assets/js/plugins.js"></script>
-
-    <!--====== Slick js ======-->
-    <script src="assets/js/slick.min.js"></script>
-
-
-    <!--====== Counter Up js ======-->
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-
-
-    <!--====== Appear js ======-->
-    <script src="assets/js/jquery.appear.min.js"></script>
-
-    <!--====== WOW js ======-->
-    <script src="assets/js/wow.min.js"></script>
-
-    <!--====== Headroom js ======-->
-    <script src="assets/js/headroom.min.js"></script>
-
-    <!--====== Jquery Nav js ======-->
-    <script src="assets/js/jquery.nav.js"></script>
-
-    <!--====== Scroll It js ======-->
-    <script src="assets/js/scrollIt.min.js"></script>
-
-    <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
-
-    <!-- Your existing script imports -->
-    <script>
-        $(document).ready(function () {
-            function getCookie(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(";").shift();
-            }
-
-            const token = getCookie("loginToken"); // Replace with the actual cookie name
-
-            const authLink = $("#auth-link");
-            if (token) {
-                authLink.attr("href", "https://studio.sling.biz/create");
-                authLink.text("Go to App");
-            }
-        });
-
-        $(window).on('load', function () {
-            $('#preloader').delay(500).fadeOut(500);
-        });
-    </script>
     <script>
         function copyCommand() {
-            const commandText = document.querySelector('.command-text').innerText;
-            navigator.clipboard.writeText(commandText).then(() => {
-                alert('Command copied to clipboard');
-            });
+            const commandText = document.getElementById('install-cmd').innerText;
+            navigator.clipboard.writeText(commandText);
         }
-        function openInNewTab(url) {
-            window.open(url, '_blank').focus();
+        function getCookie(name) {
+            const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
         }
+        (function () {
+            const token = getCookie('loginToken');
+            const authLink = document.getElementById('auth-link');
+            if (token && authLink) {
+                authLink.setAttribute('href', 'https://studio.sling.biz/create');
+                authLink.textContent = 'Go to Studio';
+            }
+        })();
     </script>
 </body>
 
